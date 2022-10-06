@@ -1,0 +1,5 @@
+Pic1|23|cap|red|blue|yellow|green|
+Picture1|23|Caption1|a|b|
+Picture1|23|Caption1|a|b|
+Picture1|23|Caption1|a|b|
+Picture1|23|Caption1|a|b|

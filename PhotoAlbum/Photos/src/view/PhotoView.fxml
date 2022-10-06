@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="644.0" prefWidth="763.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.PhotoViewController">
+   <children>
+      <AnchorPane fx:id="myAnchor" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <AnchorPane prefHeight="398.0" prefWidth="763.0">
+               <children>
+                  <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#addPhoto" text="Add photo" />
+                  <Button layoutX="14.0" layoutY="47.0" mnemonicParsing="false" onAction="#removePhoto" text="Remove photo" />
+                  <Button layoutX="14.0" layoutY="81.0" mnemonicParsing="false" onAction="#caption" text="Caption/Re-caption" />
+                  <Button fx:id="addTagbutton" layoutX="14.0" layoutY="118.0" mnemonicParsing="false" onAction="#add" text="Add tag" />
+                  <Button fx:id="delTagbutton" layoutX="14.0" layoutY="182.0" mnemonicParsing="false" onAction="#del" text="Delete tag" />
+                  <Button fx:id="copyphoto" layoutX="575.0" layoutY="284.0" mnemonicParsing="false" onAction="#copyPhotoTo" text="Copy photo" />
+                  <Button fx:id="movephoto" layoutX="666.0" layoutY="284.0" mnemonicParsing="false" onAction="#movePhotoTo" text="Move photo" />
+                  <TextField fx:id="newtagtype" layoutX="14.0" layoutY="147.0" prefHeight="26.0" prefWidth="65.0" promptText="Tagtype" />
+                  <ImageView fx:id="bigDisplay" fitHeight="252.0" fitWidth="382.0" layoutX="180.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true" />
+                  <Button fx:id="previous" layoutX="263.0" layoutY="284.0" mnemonicParsing="false" onAction="#previousPhoto" text="Previous photo" />
+                  <Button fx:id="next" layoutX="470.0" layoutY="283.0" mnemonicParsing="false" onAction="#nextPhoto" text="Next photo" />
+                  <TextArea fx:id="disp" layoutX="575.0" layoutY="31.0" prefHeight="240.0" prefWidth="158.0" promptText="Details of selected photo" />
+                  <Button layoutX="61.0" layoutY="361.0" mnemonicParsing="false" onAction="#logout" text="Logout" />
+                  <Button layoutX="14.0" layoutY="360.0" mnemonicParsing="false" onAction="#quit" text="Quit" />
+                  <Button layoutX="681.0" layoutY="347.0" mnemonicParsing="false" text="Search" />
+                  <TextField fx:id="tag" layoutX="358.0" layoutY="347.0" prefHeight="26.0" prefWidth="65.0" promptText="Date/Tag 1" />
+                  <ChoiceBox fx:id="andor" layoutX="434.0" layoutY="348.0" prefHeight="25.0" prefWidth="65.0" />
+                  <TextField fx:id="tag2" layoutX="599.0" layoutY="347.0" prefHeight="26.0" prefWidth="65.0" promptText="Date/Tag 2" />
+                  <ChoiceBox fx:id="tagtype1" layoutX="269.0" layoutY="347.0" prefHeight="25.0" prefWidth="82.0" />
+                  <ChoiceBox fx:id="tagtype2" layoutX="505.0" layoutY="348.0" prefHeight="25.0" prefWidth="82.0" />
+                  <Label layoutX="272.0" layoutY="320.0" text="Insert tag type" />
+                  <Label layoutX="508.0" layoutY="320.0" text="Insert tag type" />
+                  <TextField fx:id="newtag" layoutX="89.0" layoutY="147.0" prefHeight="26.0" prefWidth="65.0" promptText="Tag" />
+                  <TextField fx:id="deltagtype" layoutX="14.0" layoutY="218.0" prefHeight="26.0" prefWidth="65.0" promptText="Tagtype" />
+                  <TextField fx:id="deltag" layoutX="89.0" layoutY="218.0" prefHeight="26.0" prefWidth="65.0" promptText="Tag" />
+                  <Button layoutX="14.0" layoutY="259.0" mnemonicParsing="false" onAction="#addtagtype" text="Add tag type" />
+                  <TextField fx:id="createnewtagtype" layoutX="14.0" layoutY="294.0" prefHeight="26.0" prefWidth="65.0" promptText="Tagtype" />
+                  <ChoiceBox fx:id="oneormore" layoutX="90.0" layoutY="295.0" prefHeight="25.0" prefWidth="39.0" />
+                  <ListView fx:id="listView" layoutX="134.0" layoutY="280.0" prefHeight="114.0" prefWidth="127.0" />
+                  <Button layoutX="14.0" layoutY="325.0" mnemonicParsing="false" onAction="#deletetagtype" text="Delete tag type" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <ScrollPane prefHeight="246.0" prefWidth="678.0">
+         <content>
+            <TilePane fx:id="tilePane" onMouseClicked="#ThumbnailClicked" prefHeight="277.0" prefWidth="761.0" />
+         </content>
+      </ScrollPane>
+   </children>
+</VBox>

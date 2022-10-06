@@ -1,0 +1,2 @@
+Album1|0|
+Album2|1|
