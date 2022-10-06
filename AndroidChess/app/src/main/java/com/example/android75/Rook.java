@@ -1,0 +1,84 @@
+/**
+ * This is class Rook which extends Piece. It has the two methods (which is overridden) isLegalMove and getName from Piece so that it is easier to setup and manipulate the board without having to specify what type of Piece it is.
+ * Rook also has boolean variable firstMove which keeps track of if the Rook has taken a first move or not. This is to assist with Castling.
+ * @author Kishan Sojan (ks1326) and Justin Kwok (jdk179)
+ *
+ */
+
+package com.example.android75;
+
+public class Rook extends Piece{
+
+	/**
+	 * Constructor for Rook. Calls on the super constructor (from Piece)
+	 * @param color: Takes in a boolean. True will result in the creation of a white Rook and False will result in the creation of a Black Rook
+	 */
+	public Rook(boolean color) {
+		super(color);
+	}
+
+
+	/**
+	 * This method returns true or false based on if a given Rook can move from source to destination while not accounting for the rest of the board
+	 * @param startX: The source Rank from the user input
+	 * @param startY: The source File from the user input
+	 * @param endX: The destination Rank from the user input
+	 * @param endY: The destination File from the user input
+	 * @return Returns true if the move can be made by a Rook (not confirming that the move can be made). Returns False if a Rook cannot move from source to destination
+	 */
+	@Override
+	public boolean isLegalMove(int startX, int startY, int endX, int endY) {
+		//Check if move is diagonal
+		if(startX != endX && startY != endY) {
+			return false;
+		}
+		//Check to see if piece has moved
+		if(startX == endX && startY == endY) {
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * This method returns the name of the piece. In this case wR or bR
+	 * @return Returns the name of the piece.
+	 */
+	@Override
+	public String getName(){
+		if(this.isWhite() == true) {
+			String ans = "wR";
+			return ans;
+		}
+		else {
+			String ans = "bR";
+			return ans;
+		}
+	}
+
+	/**
+	 * Boolean variable that keeps track of whether the Rook has made its first move or not. True= no first move. False= First move already made.
+	 */
+	boolean firstMove=true;
+
+	/**
+	 * Returns if the Rook is about to make its first move.
+	 * @return Returns true if the Rook has not moved before. Returns false if the Rook has moved before
+	 */
+	public boolean getFirstMove()
+	{
+		return firstMove;
+	}
+
+	/**
+	 * Sets firstMove to false since the Rook in questions has made a move.
+	 */
+	public void completeFirstMove()
+	{
+		firstMove=false;
+	}
+
+	public void setFirstMove(boolean x)
+	{
+		firstMove=x;
+	}
+}
